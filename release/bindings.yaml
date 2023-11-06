@@ -1,0 +1,365 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: grafana-dashboard-folder-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/grafana-dashboard-folder: deny
+    objectSelector: {}
+  policyName: grafana-dashboard-folder.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: grafana-dashboard-folder-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/grafana-dashboard-folder: warn
+    objectSelector: {}
+  policyName: grafana-dashboard-folder.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: helmrelease-fields-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/helmrelease-fields: deny
+    objectSelector: {}
+  paramRef:
+    name: helmrelease-fields.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: helmrelease-fields.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: helmrelease-fields-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/helmrelease-fields: warn
+    objectSelector: {}
+  paramRef:
+    name: helmrelease-fields.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: helmrelease-fields.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: httproute-fields-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/httproute-fields: deny
+    objectSelector: {}
+  paramRef:
+    name: httproute-fields.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: httproute-fields.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: httproute-fields-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/httproute-fields: warn
+    objectSelector: {}
+  paramRef:
+    name: httproute-fields.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: httproute-fields.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kustomization-fields-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/kustomization-fields: deny
+    objectSelector: {}
+  paramRef:
+    name: kustomization-fields.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: kustomization-fields.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: kustomization-fields-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/kustomization-fields: warn
+    objectSelector: {}
+  paramRef:
+    name: kustomization-fields.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: kustomization-fields.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-capabilities-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-capabilities: deny
+    objectSelector: {}
+  policyName: pss-capabilities.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-capabilies-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-capabilities: warn
+    objectSelector: {}
+  policyName: pss-capabilities.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-privilege-escalation-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-privilege-escalation: deny
+    objectSelector: {}
+  policyName: pss-privilege-escalation.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-privilege-escalation-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-privilege-escalation: warn
+    objectSelector: {}
+  policyName: pss-privilege-escalation.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-running-as-non-root-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-running-as-non-root: deny
+    objectSelector: {}
+  policyName: pss-running-as-non-root.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-running-as-non-root-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-running-as-non-root: warn
+    objectSelector: {}
+  policyName: pss-running-as-non-root.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-running-as-non-root-user-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-running-as-non-root-user: deny
+    objectSelector: {}
+  policyName: pss-running-as-non-root-user.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-running-as-non-root-user-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-running-as-non-root-user: warn
+    objectSelector: {}
+  policyName: pss-running-as-non-root-user.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-seccomp-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-seccomp: deny
+    objectSelector: {}
+  policyName: pss-seccomp.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-seccomp-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-seccomp: warn
+    objectSelector: {}
+  policyName: pss-seccomp.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-volume-types-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-volume-types: deny
+    objectSelector: {}
+  policyName: pss-volume-types.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: pss-volume-types-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/pss-volume-types: warn
+    objectSelector: {}
+  policyName: pss-volume-types.vap-library.com
+  validationActions:
+    - Warn
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: service-type-deny.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/service-type: deny
+    objectSelector: {}
+  paramRef:
+    name: service-type.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: service-type.vap-library.com
+  validationActions:
+  - Deny
+  - Audit
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: service-type-warn.vap-library.com
+spec:
+  matchResources:
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        vap-library.com/service-type: warn
+    objectSelector: {}
+  paramRef:
+    name: service-type.vap-library.com
+    parameterNotFoundAction: Deny
+  policyName: service-type.vap-library.com
+  validationActions:
+    - Warn
+---
