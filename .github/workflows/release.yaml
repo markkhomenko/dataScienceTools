@@ -1,0 +1,35 @@
+permissions: write-all
+on:
+ push:
+  tags:
+    - 'v*.*.*'
+
+name: Release
+
+jobs:
+  build:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Package
+        run: ./release.sh
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            release/policies.yaml
+            release/bindings.yaml
+            release/crds.yaml
+      # we want to keep the releases in the git repo too
+      - name: Push to git        
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Pushing ${{ github.ref_name }} release files
+          branch: main
+          file_pattern: release
